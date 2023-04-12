@@ -9,7 +9,7 @@ public class Pouzivatel {
         return meno;
     }
 
-    public void setMeno(String meno) {
+    public void setMeno(String meno) {      /*?*/
         this.meno = meno;
     }
 
@@ -17,12 +17,16 @@ public class Pouzivatel {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) {    /*?*/
         this.email = email;
     }
 
     public String getPriezvisko() {
         return priezvisko;
+    }
+
+    public void setPriezvisko(String priezvisko) {
+        this.priezvisko = priezvisko;
     }
 
     public Pouzivatel(String meno, String priezvisko, String email) {
