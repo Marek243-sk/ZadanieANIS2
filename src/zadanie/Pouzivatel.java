@@ -2,6 +2,7 @@ package zadanie;
 
 public class Pouzivatel {
     private String meno;
+    private String priezvisko;
     private String email;
 
     public String getMeno() {
@@ -20,8 +21,13 @@ public class Pouzivatel {
         this.email = email;
     }
 
-    public Pouzivatel(String meno, String email) {
+    public String getPriezvisko() {
+        return priezvisko;
+    }
+
+    public Pouzivatel(String meno, String priezvisko, String email) {
         this.meno = meno;
+        this.priezvisko = priezvisko;
         this.email = email;
     }
 }
