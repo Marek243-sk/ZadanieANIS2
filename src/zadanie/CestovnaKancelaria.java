@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class CestovnaKancelaria {
     private String nazov;
     private ArrayList<Pouzivatel> zoznamPouzivatelov = new ArrayList<Pouzivatel>();
-    public CestovnaKancelaria(String nazov) {
+    public CestovnaKancelaria(String nazov) {   /*|---KONŠTRUKTOR---|*/
         this.nazov = nazov;
     }
 
-    public void registraciaPouzivatela() {
+    public void registraciaPouzivatela() {      /*|---METÓDA---|*/
         System.out.print("Zadajte meno: ");
         Scanner scanner = new Scanner(System.in);
         String username = scanner.nextLine();
@@ -23,7 +23,7 @@ public class CestovnaKancelaria {
         zoznamPouzivatelov.add(pouzivatel);
     }
 
-    public void zoznamRegistrovanychPouzivatelov() {
+    public void zoznamRegistrovanychPouzivatelov() {    /*|---METÓDA---|*/
         System.out.println("Zoznam používateľov je: ");
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
             System.out.println(zoznamPouzivatelov.get(i).getMeno() + ' ' + zoznamPouzivatelov.get(i).getEmail());
