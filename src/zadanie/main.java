@@ -7,6 +7,5 @@ public class main {
         CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
         ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
-
     }
 }
