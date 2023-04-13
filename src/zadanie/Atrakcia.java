@@ -1,4 +1,6 @@
 package zadanie;
-/*abstraktna*/
-public class Atrakcia {
+
+public abstract class Atrakcia {
+
+
 }
