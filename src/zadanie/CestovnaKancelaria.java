@@ -86,5 +86,4 @@ public class CestovnaKancelaria {
                     zoznamLeteniek.get(i).getDatum());
         }
     }
-
 }
