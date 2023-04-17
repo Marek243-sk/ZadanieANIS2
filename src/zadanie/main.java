@@ -21,9 +21,6 @@ public class main {
         Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima");
         Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
         Atrakcia atrakcia3 = new LetnaAtrakcia("Chorvátsko", "leto");
-        /*atrakcia1.infoOAtrakcii();
-        atrakcia2.infoOAtrakcii();
-        atrakcia3.infoOAtrakcii();*/
 
         ZoznamAtrakcii zoznamAtrakcii = new ZoznamAtrakcii("Zoznam", "sezóna");
         zoznamAtrakcii.pridajAtrakciu(atrakcia1);
