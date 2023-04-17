@@ -6,7 +6,7 @@ public class Pouzivatel implements EvidenciaPouzivatela{
     private String telefonneCislo;
     private int vek;
 
-    private Pouzivatel(PouzivatelBuilder builder) {
+    public Pouzivatel(PouzivatelBuilder builder) {
         this.meno = builder.meno;
         this.email = builder.email;
         this.telefonneCislo = builder.telefonneCislo;

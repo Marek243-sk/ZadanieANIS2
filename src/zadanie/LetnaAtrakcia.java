@@ -15,6 +15,7 @@ public class LetnaAtrakcia extends Atrakcia {
         this.aktivnyOddych = aktivnyOddych;
         this.pasivnyOddych = pasivnyOddych;
     }
+
     @Override
     public void vyberAtrakciu() {
 
