@@ -10,10 +10,11 @@ public class ManazerUbytovania{
         this.pridelenieUbytovania.add(new Ubytovanie(nazovHotela, adresa, cisloIzby, dlzkaPobytu,  pocetLozok, cenaZaUbytovanie));
     }
 
-    public void ukazPrideleneUbytovanie(){
+    public void ukazPonukuUbytovani(){
+        System.out.println("Ponuka ubytovaní: ");
         for (int i = 0; i < this.pridelenieUbytovania.size() ; i++) {
-            System.out.println("Pridelené ubytovanie: " + this.pridelenieUbytovania.get(i).getNazovHotela() + ", " + this.pridelenieUbytovania.get(i).getAdresa() +
-            this.pridelenieUbytovania.get(i).getCisloIzby() + ", " + this.pridelenieUbytovania.get(i).getDlazkaPobytu() + ", " + this.pridelenieUbytovania.get(i)
+            System.out.println(this.pridelenieUbytovania.get(i).getNazovHotela() + ", " + this.pridelenieUbytovania.get(i).getAdresa() + ", " +
+            this.pridelenieUbytovania.get(i).getPocetIzieb() + ", " + this.pridelenieUbytovania.get(i).getDlazkaPobytu() + ", " + this.pridelenieUbytovania.get(i)
                     .getPocetLozok() + ", " + this.pridelenieUbytovania.get(i).getCenaZaUbytovanie() + ".");
         }
     }

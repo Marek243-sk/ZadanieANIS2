@@ -7,14 +7,28 @@ public class main {
 
         CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
 
-        ck.registraciaPouzivatela();
+       /* ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
 
         ck.registraciaLetenky();
         ck.zoznamRegistrovanychLeteniek();
 
         ManazerUbytovania manazer = new ManazerUbytovania();
+        manazer.pridelenieUbytovania("Hotel Dukla", "Námestie legionárov", 52, 5, 1, 100);
         manazer.pridelenieUbytovania("Hotel Torysa", "Námestie slobody 1", 15, 7, 2,  200);
-        manazer.ukazPrideleneUbytovanie();
+        manazer.ukazPonukuUbytovani();*/
+
+        Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima");
+        Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
+        Atrakcia atrakcia3 = new LetnaAtrakcia("Chorvátsko", "leto");
+        /*atrakcia1.infoOAtrakcii();
+        atrakcia2.infoOAtrakcii();
+        atrakcia3.infoOAtrakcii();*/
+
+        ZoznamAtrakcii zoznamAtrakcii = new ZoznamAtrakcii("Zoznam", "sezóna");
+        zoznamAtrakcii.pridajAtrakciu(atrakcia1);
+        zoznamAtrakcii.pridajAtrakciu(atrakcia2);
+        zoznamAtrakcii.pridajAtrakciu(atrakcia3);
+        zoznamAtrakcii.zobrazAtrakcie();
     }
 }

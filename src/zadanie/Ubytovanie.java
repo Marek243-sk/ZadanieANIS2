@@ -1,19 +1,17 @@
 package zadanie;
 
-import java.util.ArrayList;
-
 public class Ubytovanie {
     private String nazovHotela;
     private String adresa;
-    private int cisloIzby;
+    private int pocetIzieb;
     private int dlazkaPobytu;
     private int pocetLozok;
     private int cenaZaUbytovanie;
 
-    public Ubytovanie(String nazovHotela, String adresa, int cisloIzby, int dlazkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
+    public Ubytovanie(String nazovHotela, String adresa, int pocetIzieb, int dlazkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
         this.nazovHotela = nazovHotela;
         this.adresa = adresa;
-        this.cisloIzby = cisloIzby;
+        this.pocetIzieb = pocetIzieb;
         this.dlazkaPobytu = dlazkaPobytu;
         this.pocetLozok = pocetLozok;
         this.cenaZaUbytovanie = cenaZaUbytovanie;
@@ -27,8 +25,8 @@ public class Ubytovanie {
         return adresa;
     }
 
-    public int getCisloIzby() {
-        return cisloIzby;
+    public int getPocetIzieb() {
+        return pocetIzieb;
     }
 
     public int getDlazkaPobytu() {

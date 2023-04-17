@@ -2,22 +2,17 @@ package zadanie;
 
 public class ZimnaAtrakcia extends Atrakcia {
 
-    protected String nazov;
-    protected String rocneObdobie;
-    protected int odVeku;
-    protected boolean aktivnyOddych = false;
-    protected boolean pasivnyOddych = false;
+    private int odVeku = 6;
+    private boolean aktivnyOddych = false;
+    private boolean pasivnyOddych = true;
 
-    public void ZimnaAtrakcia(String nazov, String rocneObdobie, int odVeku, boolean aktivnyOddych, boolean pasivnyOddych) {
-        this.nazov = nazov;
-        this.rocneObdobie = rocneObdobie;
-        this.odVeku = odVeku;
-        this.aktivnyOddych = aktivnyOddych;
-        this.pasivnyOddych = pasivnyOddych;
+    public ZimnaAtrakcia(String nazov, String rocneObdobie) {
+        super(nazov, rocneObdobie);
     }
 
     @Override
-    public void vyberAtrakciu() {
-
+    public void infoOAtrakcii() {
+        System.out.println("Zimná atrakcia");
+        System.out.println(this.nazov + " " + this.rocneObdobie + " " + this.odVeku + " " + this.aktivnyOddych + " " + this.pasivnyOddych);
     }
 }
