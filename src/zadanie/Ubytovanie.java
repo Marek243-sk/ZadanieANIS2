@@ -4,11 +4,11 @@ public class Ubytovanie {
     private String nazovHotela;
     private String adresa;
     private int pocetIzieb;
-    private int dlazkaPobytu;
+    private String dlazkaPobytu;
     private int pocetLozok;
     private int cenaZaUbytovanie;
 
-    public Ubytovanie(String nazovHotela, String adresa, int pocetIzieb, int dlazkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
+    public Ubytovanie(String nazovHotela, String adresa, int pocetIzieb, String dlazkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
         this.nazovHotela = nazovHotela;
         this.adresa = adresa;
         this.pocetIzieb = pocetIzieb;
@@ -29,9 +29,10 @@ public class Ubytovanie {
         return pocetIzieb;
     }
 
-    public int getDlazkaPobytu() {
+    public String getDlazkaPobytu() {
         return dlazkaPobytu;
     }
+
 
     public int getPocetLozok() {
         return pocetLozok;
@@ -39,5 +40,9 @@ public class Ubytovanie {
 
     public int getCenaZaUbytovanie() {
         return cenaZaUbytovanie;
+    }
+
+    public void setCenaZaUbytovanie(int cena) {
+        this.cenaZaUbytovanie = cena;
     }
 }
