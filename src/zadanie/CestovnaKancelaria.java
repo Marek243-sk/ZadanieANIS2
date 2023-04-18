@@ -51,7 +51,7 @@ public class CestovnaKancelaria {
         System.out.print("Zadajte číslo sedadla: ");
         String cisloSedadla = scanner.nextLine();
 
-        System.out.print("Zadajte tiredu: ");
+        System.out.print("Zadajte triedu: ");
         String trieda = scanner.nextLine();
 
         System.out.print("Zadajte cenu: ");
@@ -63,7 +63,7 @@ public class CestovnaKancelaria {
         System.out.print("Zadajte miesto odletu: ");
         String miestoOdletu = scanner.nextLine();
 
-        System.out.print("Zadajte miesro príletu: ");
+        System.out.print("Zadajte miesto príletu: ");
         String miestoPriletu = scanner.nextLine();
 
         System.out.print("Zadajte dátum: ");

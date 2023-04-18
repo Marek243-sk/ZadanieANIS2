@@ -7,7 +7,7 @@ public class main {
 
         CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
 
-       /* ck.registraciaPouzivatela();
+        ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
 
         ck.registraciaLetenky();
@@ -16,7 +16,7 @@ public class main {
         ManazerUbytovania manazer = new ManazerUbytovania();
         manazer.pridelenieUbytovania("Hotel Dukla", "Námestie legionárov", 52, 5, 1, 100);
         manazer.pridelenieUbytovania("Hotel Torysa", "Námestie slobody 1", 15, 7, 2,  200);
-        manazer.ukazPonukuUbytovani();*/
+        manazer.ukazPonukuUbytovani();
 
         Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima");
         Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
