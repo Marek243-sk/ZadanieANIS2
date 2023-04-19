@@ -5,9 +5,9 @@ public class main {
 
         System.out.println("Vytajte v: Cestovná kancelária");
 
-        CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
+        /*CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
 
-        /*ck.registraciaPouzivatela();
+        ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
 
         ck.registraciaLetenky();
@@ -17,9 +17,10 @@ public class main {
         manazer.pridelenieUbytovania("Hotel Dukla", "Námestie legionárov", 52, "5", 1, 100);
         manazer.pridelenieUbytovania("Hotel Torysa", "Námestie slobody 1", 15, "7", 2,  200);
         manazer.pridelenieUbytovania("Hotel Dukla", "Námestie legionárov", 52, "14", 1, 400);
-        manazer.ukazPonukuUbytovani();
+        manazer.pridelenieUbytovania("Hotel Torysa", "Námestie legionárov", 52, "21", 1, 600);
         manazer.uplatniZlavu();
         manazer.ukazPonukuUbytovani();
+
 
         /*Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima");
         Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
