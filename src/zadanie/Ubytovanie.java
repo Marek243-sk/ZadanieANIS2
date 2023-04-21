@@ -7,7 +7,6 @@ public class Ubytovanie {
     private String dlazkaPobytu;
     private int pocetLozok;
     private int cenaZaUbytovanie;
-
     public Ubytovanie(String nazovHotela, String adresa, int pocetIzieb, String dlazkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
         this.nazovHotela = nazovHotela;
         this.adresa = adresa;
@@ -32,7 +31,6 @@ public class Ubytovanie {
     public String getDlazkaPobytu() {
         return dlazkaPobytu;
     }
-
 
     public int getPocetLozok() {
         return pocetLozok;

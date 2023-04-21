@@ -6,8 +6,8 @@ public class LetnaAtrakcia extends Atrakcia {
     protected boolean aktivnyOddych = true;
     protected boolean pasivnyOddych = false;
 
-    public LetnaAtrakcia(String nazov, String rocneObdobie) {
-        super(nazov, rocneObdobie);
+    public LetnaAtrakcia(String nazov, String rocneObdobie, int cena) {
+        super(nazov, rocneObdobie, cena);
     }
 
     @Override

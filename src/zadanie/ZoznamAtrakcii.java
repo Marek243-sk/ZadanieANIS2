@@ -5,8 +5,8 @@ import java.util.Iterator;
 public class ZoznamAtrakcii extends Atrakcia {
 
     private ArrayList <Atrakcia> zoznam;
-    public ZoznamAtrakcii(String nazov, String sezona) {
-        super(nazov, sezona);
+    public ZoznamAtrakcii(String nazov, String sezona, int cena) {
+        super(nazov, sezona, cena);
         this.zoznam = new ArrayList<>();
     }
     @Override

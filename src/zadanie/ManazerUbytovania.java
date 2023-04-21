@@ -14,7 +14,7 @@ public class ManazerUbytovania {
         System.out.println("Ponuka ubytovaní (Ak je dĺžka ubytovania 7, 10, 14, alebo 21 dní, uplatní sa zľava.): ");
         for (int i = 0; i < this.pridelenieUbytovania.size() ; i++) {
             System.out.println("Názov hotela: " + this.pridelenieUbytovania.get(i).getNazovHotela() + ", adresa hotela: " + this.pridelenieUbytovania.get(i).getAdresa() + ", počet izieb: " +
-            this.pridelenieUbytovania.get(i).getPocetIzieb() + ", dĺžka pobytu: " + this.pridelenieUbytovania.get(i).getDlazkaPobytu() + ", počet lôžok: " + this.pridelenieUbytovania.get(i)
+                    this.pridelenieUbytovania.get(i).getPocetIzieb() + ", dĺžka pobytu: " + this.pridelenieUbytovania.get(i).getDlazkaPobytu() + ", počet lôžok: " + this.pridelenieUbytovania.get(i)
                     .getPocetLozok() + ", cena za ubytovanie: " + this.pridelenieUbytovania.get(i).getCenaZaUbytovanie() + " €.");
         }
     }

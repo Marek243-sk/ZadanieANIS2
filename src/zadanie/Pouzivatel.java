@@ -1,10 +1,13 @@
 package zadanie;
 
+import java.util.ArrayList;
+
 public class Pouzivatel implements EvidenciaPouzivatela{
     private String meno;
     private String email;
     private String telefonneCislo;
     private int vek;
+    private ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();
 
     public Pouzivatel(PouzivatelBuilder builder) {
         this.meno = builder.meno;
@@ -43,6 +46,13 @@ public class Pouzivatel implements EvidenciaPouzivatela{
 
     public void setVek(int vek) {
         this.vek = vek;
+    }
+
+    public ArrayList<Letenka> getZoznamLeteniek() {
+        return this.zoznamLeteniek;
+    }
+    public void pridajLetenku(Letenka letenka) {
+        this.zoznamLeteniek.add(letenka);
     }
 
     public static class PouzivatelBuilder {

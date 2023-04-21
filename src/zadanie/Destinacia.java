@@ -1,8 +1,16 @@
 package zadanie;
 
+import java.util.ArrayList;
+
 public class Destinacia {
     private String nazov;
     private String krajina;
-    private String teplota;
-    private String pocasie;
+
+
+    public Destinacia(String nazov, String krajina) {
+        this.nazov = nazov;
+        this.krajina = krajina;
+    }
+
+
 }

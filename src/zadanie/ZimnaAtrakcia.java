@@ -6,8 +6,8 @@ public class ZimnaAtrakcia extends Atrakcia {
     private boolean aktivnyOddych = false;
     private boolean pasivnyOddych = true;
 
-    public ZimnaAtrakcia(String nazov, String rocneObdobie) {
-        super(nazov, rocneObdobie);
+    public ZimnaAtrakcia(String nazov, String rocneObdobie, int cena) {
+        super(nazov, rocneObdobie, cena);
     }
 
     @Override

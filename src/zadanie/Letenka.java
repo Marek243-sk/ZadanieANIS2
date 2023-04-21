@@ -8,6 +8,7 @@ public class Letenka implements EvidenciaLetenky{
     private String miestoOdletu;
     private String miestoPriletu;
     private String datum;
+    private int idLetenky;
 
     private Letenka(LetenkaBuilder builder) {
         this.cisloSedadla = builder.cisloSedadla;
@@ -17,6 +18,7 @@ public class Letenka implements EvidenciaLetenky{
         this.miestoOdletu = builder.miestoOdletu;
         this.miestoPriletu = builder.miestoPriletu;
         this.datum = builder.datum;
+        this.idLetenky = builder.idLetenky;
     }
 
     public String getCisloSedadla() {
@@ -75,6 +77,10 @@ public class Letenka implements EvidenciaLetenky{
         this.datum = datum;
     }
 
+    public int getIdLetenky() {
+        return idLetenky;
+    }
+
     public static class LetenkaBuilder {
         private String cisloSedadla;
         private String trieda;
@@ -83,10 +89,12 @@ public class Letenka implements EvidenciaLetenky{
         private String miestoOdletu;
         private String miestoPriletu;
         private String datum;
+        private int idLetenky;
 
-        public LetenkaBuilder(String cisloSedadla, String trieda) {     /*musi byt*/
+        public LetenkaBuilder(String cisloSedadla, String trieda, int idLetenky) {     /*musi byt*/
             this.cisloSedadla = cisloSedadla;
             this.trieda = trieda;
+            this.idLetenky = idLetenky;
         }
 
         public  LetenkaBuilder setCena(int cena) {

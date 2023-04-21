@@ -7,6 +7,7 @@ public class CestovnaKancelaria {
     private static CestovnaKancelaria instancia = new CestovnaKancelaria("Cestovná kancelaria");
     private String nazov;
     private ArrayList<Pouzivatel> zoznamPouzivatelov = new ArrayList<Pouzivatel>();
+    private ArrayList<Pobyt> zpznamPobytov = new ArrayList<Pobyt>();
     private ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();
     private CestovnaKancelaria(String nazov) {
         this.nazov = nazov;
@@ -31,10 +32,48 @@ public class CestovnaKancelaria {
         System.out.print("Zadajte vek: ");
         int vek = Integer.parseInt(scanner.nextLine());
 
-        Pouzivatel pouzivatel = new Pouzivatel.PouzivatelBuilder(email).setMeno(meno).setTelefonneCislo(telefonneCislo).setVek(vek).vytvor();
-        System.out.println("Používateľ " + pouzivatel.getMeno() + " s tel.č.: " + pouzivatel.getTelefonneCislo()
-                + " a vekom: " + pouzivatel.getVek() + " bol úspešne zaregistrovaný.");
-        zoznamPouzivatelov.add(pouzivatel);
+        boolean pouzivatelExistuje = false;
+
+        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+                pouzivatelExistuje = true;
+                break;
+            }
+        }
+        if (pouzivatelExistuje) {
+            System.out.println("CHYBA: Používateľ už je zaregistrovaný.");
+        } else {
+            Pouzivatel pouzivatel = new Pouzivatel.PouzivatelBuilder(email).setMeno(meno).setTelefonneCislo(telefonneCislo).setVek(vek).vytvor();
+            System.out.println("Používateľ " + pouzivatel.getMeno() + " s tel.č.: " + pouzivatel.getTelefonneCislo()
+                    + " a vekom: " + pouzivatel.getVek() + " bol úspešne zaregistrovaný.");
+            zoznamPouzivatelov.add(pouzivatel);
+        }
+    }
+
+    public void odstranitPouzivatela(String email) {
+        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+                zoznamPouzivatelov.remove(i);
+                break;
+            }
+        }
+    }
+
+    public void zmenitEmail(String email, String novyEmail) {
+        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+                boolean novyEmailExistuje = false;
+                for (int j = 0; j < zoznamPouzivatelov.size(); j++) {
+                    if(zoznamPouzivatelov.get(j).getEmail() == novyEmail) {
+                        novyEmailExistuje = true;
+                        break;
+                    }
+                }
+                if (!novyEmailExistuje) {
+                    zoznamPouzivatelov.get(i).setEmail(novyEmail);
+                }
+            }
+        }
     }
 
     public void zoznamRegistrovanychPouzivatelov() {
@@ -43,6 +82,15 @@ public class CestovnaKancelaria {
             System.out.println(zoznamPouzivatelov.get(i).getMeno() + ", " + zoznamPouzivatelov.get(i).getEmail() + ", " + zoznamPouzivatelov.get(i).getTelefonneCislo()
             + ", " + zoznamPouzivatelov.get(i).getVek());
         }
+    }
+
+    public Pouzivatel getPouzivatel(String email) {
+        for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
+            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+                return zoznamPouzivatelov.get(i);
+            }
+        }
+        return null;
     }
 
     public void registraciaLetenky() {
@@ -69,12 +117,24 @@ public class CestovnaKancelaria {
         System.out.print("Zadajte dátum: ");
         String datum = scanner.nextLine();
 
-        Letenka letenka = new Letenka.LetenkaBuilder(cisloSedadla, trieda).setCena(cena).setDruh(druh)
+        System.out.print("Zadaj id letenky: ");
+        String idLetenky = scanner.nextLine();
+
+        Letenka letenka = new Letenka.LetenkaBuilder(cisloSedadla, trieda, Integer.parseInt(idLetenky)).setCena(cena).setDruh(druh)
                 .setMiestoOdletu(miestoOdletu).setMiestoPriletu(miestoPriletu).setDatum(datum).vytvor();
         System.out.println("Letenka s číslom sedadla: " + letenka.getCisloSedadla() + " ,triedou: " + letenka.getTrieda()
         + " , cenou: " + letenka.getCena() + "€, druh: " + letenka.getDruh() + " ,miestom odletu: " + letenka.getMiestoOdletu()
         + " ,miestom príletu: " + letenka.getMiestoPriletu() + " ,dátumom: " + letenka.getDatum() + " bola úspešne zaregistrovaná.");
                 zoznamLeteniek.add(letenka);
+    }
+
+    public Letenka getLetenka(int id) {
+        for (int i = 0; i < zoznamLeteniek.size(); i++) {
+            if (zoznamLeteniek.get(i).getIdLetenky() == id) {
+                return this.zoznamLeteniek.get(i);
+            }
+        }
+        return null;
     }
 
     public void zoznamRegistrovanychLeteniek() {
