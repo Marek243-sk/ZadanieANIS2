@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Pobyt {
 
-    int cisloPobytu;
-    Pouzivatel pouzivatel;
-    ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();
-    Ubytovanie ubytovanie;
-    ArrayList<Atrakcia> zoznamAtrakcii = new ArrayList<Atrakcia>();
-    Destinacia destinacia;
+    public int cisloPobytu;
+    public Pouzivatel pouzivatel;
+    public ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();
+    public Ubytovanie ubytovanie;
+    public ArrayList<Atrakcia> zoznamAtrakcii = new ArrayList<Atrakcia>();
+    public Destinacia destinacia;
 
     public Pobyt(int cislo, Pouzivatel pouzivatel, Letenka letenka, Ubytovanie ubytovanie, Atrakcia atrakcia, Destinacia destinacia) {
         this.cisloPobytu = cislo;
