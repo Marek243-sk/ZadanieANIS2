@@ -7,7 +7,7 @@ public class CestovnaKancelaria {
     private static CestovnaKancelaria instancia = new CestovnaKancelaria("Cestovná kancelaria");
     private String nazov;
     private ArrayList<Pouzivatel> zoznamPouzivatelov = new ArrayList<Pouzivatel>();
-    private ArrayList<Pobyt> zpznamPobytov = new ArrayList<Pobyt>();
+    private ArrayList<Pobyt> zoznamPobytov = new ArrayList<Pobyt>();
     private ArrayList<Letenka> zoznamLeteniek = new ArrayList<Letenka>();
     private CestovnaKancelaria(String nazov) {
         this.nazov = nazov;
@@ -32,8 +32,8 @@ public class CestovnaKancelaria {
         System.out.print("Zadajte vek: ");
         int vek = Integer.parseInt(scanner.nextLine());
 
+        // AK JE UŽ POUŽÍVATEĽ ZAREGISTROVANÝ
         boolean pouzivatelExistuje = false;
-
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
             if (zoznamPouzivatelov.get(i).getEmail() == email) {
                 pouzivatelExistuje = true;
@@ -42,7 +42,7 @@ public class CestovnaKancelaria {
         }
         if (pouzivatelExistuje) {
             System.out.println("CHYBA: Používateľ už je zaregistrovaný.");
-        } else {
+        } else { //AK POUŽÍVATEĽ EŠTE NIE JE ZAREGISTROVANÝ
             Pouzivatel pouzivatel = new Pouzivatel.PouzivatelBuilder(email).setMeno(meno).setTelefonneCislo(telefonneCislo).setVek(vek).vytvor();
             System.out.println("Používateľ " + pouzivatel.getMeno() + " s tel.č.: " + pouzivatel.getTelefonneCislo()
                     + " a vekom: " + pouzivatel.getVek() + " bol úspešne zaregistrovaný.");
@@ -83,7 +83,7 @@ public class CestovnaKancelaria {
             + ", " + zoznamPouzivatelov.get(i).getVek());
         }
     }
-
+    //VRÁTI POUŽÍVATEĽA NA ZÁKLADE EMAILU
     public Pouzivatel getPouzivatel(String email) {
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
             if (zoznamPouzivatelov.get(i).getEmail() == email) {
