@@ -25,7 +25,7 @@ public class Pouzivatel implements EvidenciaPouzivatela{
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -33,7 +33,7 @@ public class Pouzivatel implements EvidenciaPouzivatela{
     }
 
     public String getTelefonneCislo() {
-        return telefonneCislo;
+        return this.telefonneCislo;
     }
 
     public void setTelefonneCislo(String telefonneCislo) {

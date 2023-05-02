@@ -2,9 +2,9 @@ package zadanie;
 
 public class ZimnaAtrakcia extends Atrakcia {
 
-    private int odVeku = 6;
-    private boolean aktivnyOddych = false;
-    private boolean pasivnyOddych = true;
+    private final int odVeku = 6;
+    private final boolean aktivnyOddych = false;
+    private final boolean pasivnyOddych = true;
 
     public ZimnaAtrakcia(String nazov, String rocneObdobie, int cena) {
         super(nazov, rocneObdobie, cena);

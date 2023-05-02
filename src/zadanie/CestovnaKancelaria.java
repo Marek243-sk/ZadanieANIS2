@@ -50,29 +50,43 @@ public class CestovnaKancelaria {
         }
     }
 
-    public void odstranitPouzivatela(String email) {
+    public void odstranitPouzivatela(String email) throws CKException {
+        boolean pouzivatelExistuje = false;
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
                 zoznamPouzivatelov.remove(i);
+                pouzivatelExistuje = true;
                 break;
             }
         }
+        if (!pouzivatelExistuje) {
+            throw new CKException("Pokúšate sa odstrániť neexistujúceho používateľa.", this);
+        }
     }
 
-    public void zmenitEmail(String email, String novyEmail) {
+    public void zmenitEmail(String email, String novyEmail) throws CKException {
+        boolean emailExistuje = false;
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
+                emailExistuje = true;
                 boolean novyEmailExistuje = false;
                 for (int j = 0; j < zoznamPouzivatelov.size(); j++) {
-                    if(zoznamPouzivatelov.get(j).getEmail() == novyEmail) {
+                    if(zoznamPouzivatelov.get(j).getEmail().equals(novyEmail)) {
                         novyEmailExistuje = true;
                         break;
                     }
                 }
                 if (!novyEmailExistuje) {
-                    zoznamPouzivatelov.get(i).setEmail(novyEmail);
+                    if (novyEmail.contains("@")){
+                        zoznamPouzivatelov.get(i).setEmail(novyEmail);
+                    } else {
+                        throw new CKException("Email neobsahoval zavináč", this);
+                    }
                 }
             }
+        }
+        if (!emailExistuje) {
+            throw new CKException("Menený email neexistuje");
         }
     }
 

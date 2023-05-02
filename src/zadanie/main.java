@@ -7,10 +7,22 @@ public class main {
 
         CestovnaKancelaria ck = CestovnaKancelaria.vytvorInstanciuSingleton();
 
+        try {
+            ck.registraciaPouzivatela();
+            ck.zoznamRegistrovanychPouzivatelov();
+            ck.zmenitEmail("marek@123", "MAREK@456");
+            ck.zoznamRegistrovanychPouzivatelov();
+            ck.zmenitEmail("abc@789", "ABC@987");
+            ck.zoznamRegistrovanychPouzivatelov();
+        } catch (CKException chyba) {
+            System.out.println(chyba);
+        }
+
+        /*
         ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
 
-        ck.registraciaLetenky();
+        ck.registraciaLetenky();*/
         //ck.zoznamRegistrovanychLeteniek();
 
         //ManazerUbytovania manazer = new ManazerUbytovania();
@@ -21,14 +33,21 @@ public class main {
         manazer.uplatniZlavu();
         manazer.ukazPonukuUbytovani();*/
 
-        Destinacia destinacia = new Destinacia("Barcelona", "Španielsko");
 
-        Ubytovanie ubytovanie = new Ubytovanie("A", "B", 2, "10", 2, 500);
+        try {
+            Destinacia destinacia = new Destinacia("Barcelona", "Španielsko");
 
-        Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima", 50);
+            Ubytovanie ubytovanie = new Ubytovanie("A", "B", 2, "10", 2, 500);
 
-        Pobyt pobyt = new Pobyt(1, ck.getPouzivatel("marek@mail.com"), ck.getLetenka(1), ubytovanie, atrakcia1, destinacia);
-        System.out.println(pobyt.cenaPobytu());
+            Atrakcia atrakcia1 = new ZimnaAtrakcia("Štrbské pleso", "zima", 50);
+
+            Pobyt pobyt = new Pobyt(1, ck.getPouzivatel("marek@mail.com"), ck.getLetenka(1), ubytovanie, atrakcia1, destinacia);
+            System.out.println(pobyt.cenaPobytu());
+
+        } catch (DestinaciaException chyba) {
+            System.out.println(chyba);
+        }
+
 
         /*Atrakcia atrakcia2 = new ZimnaAtrakcia("Tatry", "jeseň");
         Atrakcia atrakcia3 = new LetnaAtrakcia("Chorvátsko", "leto");*/
