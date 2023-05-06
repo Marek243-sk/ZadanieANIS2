@@ -13,10 +13,12 @@ public class CestovnaKancelaria {
         this.nazov = nazov;
     }
 
+    //Singleton
     public static CestovnaKancelaria vytvorInstanciuSingleton() {
         return instancia;
     }
 
+    //Vytvorenie používateľa pomcou vstupu z klávesnice
     public void registraciaPouzivatela() {
         Scanner scanner = new Scanner(System.in);
 
@@ -42,7 +44,8 @@ public class CestovnaKancelaria {
         }
         if (pouzivatelExistuje) {
             System.out.println("CHYBA: Používateľ už je zaregistrovaný.");
-        } else { //AK POUŽÍVATEĽ EŠTE NIE JE ZAREGISTROVANÝ
+            //AK POUŽÍVATEĽ EŠTE NIE JE ZAREGISTROVANÝ
+        } else {
             Pouzivatel pouzivatel = new Pouzivatel.PouzivatelBuilder(email).setMeno(meno).setTelefonneCislo(telefonneCislo).setVek(vek).vytvor();
             System.out.println("Používateľ " + pouzivatel.getMeno() + " s tel.č.: " + pouzivatel.getTelefonneCislo()
                     + " a vekom: " + pouzivatel.getVek() + " bol úspešne zaregistrovaný.");
@@ -50,6 +53,7 @@ public class CestovnaKancelaria {
         }
     }
 
+    //Odstráni používateľa na základe email-u
     public void odstranitPouzivatela(String email) throws CKException {
         boolean pouzivatelExistuje = false;
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
@@ -64,6 +68,7 @@ public class CestovnaKancelaria {
         }
     }
 
+    //Zmení email používateľa, najprv overí, či sa taký email v zozname nachádza, overí výskyt '@' v email-i
     public void zmenitEmail(String email, String novyEmail) throws CKException {
         boolean emailExistuje = false;
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
@@ -90,6 +95,7 @@ public class CestovnaKancelaria {
         }
     }
 
+    //Prejde zoznamPouzivatelov a vypíše požívateľov
     public void zoznamRegistrovanychPouzivatelov() {
         System.out.println("Zoznam používateľov je: ");
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
@@ -107,6 +113,7 @@ public class CestovnaKancelaria {
         return null;
     }
 
+    //Vytvorenie letenky pomocou vstupu z klávesnice
     public void registraciaLetenky() {
         Scanner scanner = new Scanner(System.in);
 
@@ -142,6 +149,7 @@ public class CestovnaKancelaria {
                 zoznamLeteniek.add(letenka);
     }
 
+    //Prejde pole zoznamLeteniek a vráti id letenky
     public Letenka getLetenka(int id) {
         for (int i = 0; i < zoznamLeteniek.size(); i++) {
             if (zoznamLeteniek.get(i).getIdLetenky() == id) {
@@ -151,7 +159,11 @@ public class CestovnaKancelaria {
         return null;
     }
 
-    public void zoznamRegistrovanychLeteniek() {
+    //Prejde pole zoznamLeteniek z vypíše letenky
+    public void zoznamRegistrovanychLeteniek() throws CKException {
+        if (zoznamLeteniek.isEmpty()) {
+            throw new CKException("Zoznam leteniek je prázdny.");
+        }
         System.out.println("Zoznam leteniek je: ");
         for (int i = 0; i < zoznamLeteniek.size(); i++) {
             System.out.println(zoznamLeteniek.get(i).getCisloSedadla()+ ", " + zoznamLeteniek.get(i).getTrieda()

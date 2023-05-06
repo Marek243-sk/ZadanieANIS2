@@ -21,8 +21,12 @@ public class main {
         /*ck.registraciaPouzivatela();
         ck.zoznamRegistrovanychPouzivatelov();
 */
-        ck.registraciaLetenky();
-        ck.zoznamRegistrovanychLeteniek();
+        try {
+            ck.registraciaLetenky();
+            ck.zoznamRegistrovanychLeteniek();
+        } catch (CKException chyba) {
+            System.out.println(chyba);
+        }
 /*
         try {
             ManazerUbytovania manazer = new ManazerUbytovania();

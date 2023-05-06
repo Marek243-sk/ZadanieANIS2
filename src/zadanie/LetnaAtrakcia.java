@@ -10,6 +10,7 @@ public class LetnaAtrakcia extends Atrakcia {
         super(nazov, rocneObdobie, cena);
     }
 
+    //Vypíše charakteristiky danej letnej atrakcie
     @Override
     public void infoOAtrakcii() {
         System.out.println("Letná atrakcia");

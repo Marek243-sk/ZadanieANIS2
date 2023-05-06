@@ -91,6 +91,7 @@ public class Letenka implements EvidenciaLetenky{
         private String datum;
         private int idLetenky;
 
+        //Kon3truktor, atribúty 'cisloSedadla' a 'trieda' sú povinné
         public LetenkaBuilder(String cisloSedadla, String trieda, int idLetenky) {
             if (cisloSedadla == null || trieda == null) {
                 throw new IllegalArgumentException("Nie su zadane povinne atributy: cisloSedadla, trieda");

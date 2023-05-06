@@ -10,6 +10,7 @@ public class ZimnaAtrakcia extends Atrakcia {
         super(nazov, rocneObdobie, cena);
     }
 
+    //Vypíše charakteristiky danej zimnej atrakcie
     @Override
     public void infoOAtrakcii() {
         System.out.println("Zimná atrakcia");
