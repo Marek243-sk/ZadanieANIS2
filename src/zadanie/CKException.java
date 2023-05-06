@@ -9,7 +9,6 @@ public class CKException extends Exception{
     public CKException(String sprava) {
         this(sprava, null);
     }
-
     public CKException(String sprava, CestovnaKancelaria ck) {
         super(sprava);
         this.ck = ck;

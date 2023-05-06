@@ -6,6 +6,7 @@ public abstract class Atrakcia {
     public String rocneObdobie;
     public int cena;
 
+
     public Atrakcia(String nazov, String rocneObdobie, int cena) {
         this.nazov = nazov;
         this.rocneObdobie = rocneObdobie;
@@ -14,6 +15,9 @@ public abstract class Atrakcia {
 
     public int getCena() {
         return this.cena;
+    }
+    public String getNazov() {
+        return this.nazov;
     }
 
     public abstract void infoOAtrakcii();

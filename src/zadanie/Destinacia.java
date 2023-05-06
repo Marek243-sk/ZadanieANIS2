@@ -7,15 +7,8 @@ public class Destinacia {
     private String krajina;
 
 
-    public Destinacia(String nazov, String krajina) throws DestinaciaException{
-        if (!(this.nazov instanceof String)) {
-            throw new DestinaciaException("Názov nebol zadaný ako reťazec.", this);
-        }
+    public Destinacia(String nazov, String krajina) {
         this.nazov = nazov;
-
-        if (!(this.krajina instanceof String)) {
-            throw new DestinaciaException("Krajina nebola zadaná ako reťazec.", this);
-        }
         this.krajina = krajina;
     }
 }

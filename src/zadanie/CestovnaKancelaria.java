@@ -35,7 +35,7 @@ public class CestovnaKancelaria {
         // AK JE UŽ POUŽÍVATEĽ ZAREGISTROVANÝ
         boolean pouzivatelExistuje = false;
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
                 pouzivatelExistuje = true;
                 break;
             }
@@ -100,7 +100,7 @@ public class CestovnaKancelaria {
     //VRÁTI POUŽÍVATEĽA NA ZÁKLADE EMAILU
     public Pouzivatel getPouzivatel(String email) {
         for (int i = 0; i < zoznamPouzivatelov.size(); i++) {
-            if (zoznamPouzivatelov.get(i).getEmail() == email) {
+            if (zoznamPouzivatelov.get(i).getEmail().equals(email)) {
                 return zoznamPouzivatelov.get(i);
             }
         }

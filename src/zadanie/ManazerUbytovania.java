@@ -10,7 +10,10 @@ public class ManazerUbytovania {
         this.pridelenieUbytovania.add(new Ubytovanie(nazovHotela, adresa, cisloIzby, dlzkaPobytu,  pocetLozok, cenaZaUbytovanie));
     }
 
-    public void ukazPonukuUbytovani(){
+    public void ukazPonukuUbytovani() throws MUException{
+        if (this.pridelenieUbytovania.isEmpty()) {
+            throw new MUException("Zoznam ubytovaní je prázdny.");
+        }
         System.out.println("Ponuka ubytovaní (Ak je dĺžka ubytovania 7, 10, 14, alebo 21 dní, uplatní sa zľava.): ");
         for (int i = 0; i < this.pridelenieUbytovania.size() ; i++) {
             System.out.println("Názov hotela: " + this.pridelenieUbytovania.get(i).getNazovHotela() + ", adresa hotela: " + this.pridelenieUbytovania.get(i).getAdresa() + ", počet izieb: " +
@@ -19,8 +22,14 @@ public class ManazerUbytovania {
         }
     }
 
-    public void uplatniZlavu() {
+    public void uplatniZlavu() throws MUException {
+        if (this.pridelenieUbytovania.isEmpty()) {
+            throw new MUException("Zoznam ubytovaní je prázdny.");
+        }
         for (int i = 0; i < pridelenieUbytovania.size(); i++) {
+            if (Integer.parseInt(pridelenieUbytovania.get(i).getDlazkaPobytu()) < 1) {
+                throw new MUException("Chybná dĺžka pobytu. Dĺžka pobytu je menšia ako 1 deň.");
+            }
             if (pridelenieUbytovania.get(i).getDlazkaPobytu().equals("7") || pridelenieUbytovania.get(i).getDlazkaPobytu().equals("10")) {
                 int cena = pridelenieUbytovania.get(i).getCenaZaUbytovanie();
                 int cenaPoZlave = cena - (Integer.parseInt(pridelenieUbytovania.get(i).getDlazkaPobytu()) - 3) * 10;

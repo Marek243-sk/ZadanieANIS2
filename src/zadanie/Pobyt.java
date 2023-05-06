@@ -31,7 +31,10 @@ public class Pobyt {
     public int cenaPobytu() {
         int celkovaCena = 0;
         for (int i = 0; i < zoznamLeteniek.size(); i++) {
-            celkovaCena += zoznamLeteniek.get(i).getCena();
+            Letenka letenka = zoznamLeteniek.get(i);
+            if (letenka != null) {
+                celkovaCena += letenka.getCena();
+            }
         }
 
         celkovaCena += ubytovanie.getCenaZaUbytovanie();
@@ -39,7 +42,6 @@ public class Pobyt {
         for (int i = 0; i < zoznamAtrakcii.size(); i++) {
             celkovaCena += zoznamAtrakcii.get(i).getCena();
         }
-
         return celkovaCena;
     }
 }

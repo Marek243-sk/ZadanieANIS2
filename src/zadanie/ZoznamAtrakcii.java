@@ -14,11 +14,18 @@ public class ZoznamAtrakcii extends Atrakcia {
         System.out.println("Zoznam atrakcií: ");
     }
 
-    public void pridajAtrakciu(Atrakcia atrakcia) {
+    public void pridajAtrakciu(Atrakcia atrakcia) throws AtrakciaException {
+        for (int i = 0; i < zoznam.size(); i++) {
+            if (zoznam.get(i).getNazov().equals(atrakcia.getNazov())) {
+                throw new AtrakciaException("Atrakcia s týmto názvom už existuje.", this);
+            }
+        }
         zoznam.add(atrakcia);
     }
 
-    public void zobrazAtrakcie() {
+
+    public void zobrazAtrakcie() throws AtrakciaException {
+        boolean atrakciaExistuje = false;
         Iterator<Atrakcia> iterator = zoznam.iterator();
         while (iterator.hasNext()) {
             Atrakcia a = iterator.next();

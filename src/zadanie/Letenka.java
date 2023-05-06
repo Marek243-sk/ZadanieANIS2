@@ -91,7 +91,10 @@ public class Letenka implements EvidenciaLetenky{
         private String datum;
         private int idLetenky;
 
-        public LetenkaBuilder(String cisloSedadla, String trieda, int idLetenky) {     /*musi byt*/
+        public LetenkaBuilder(String cisloSedadla, String trieda, int idLetenky) {
+            if (cisloSedadla == null || trieda == null) {
+                throw new IllegalArgumentException("Nie su zadane povinne atributy: cisloSedadla, trieda");
+            }
             this.cisloSedadla = cisloSedadla;
             this.trieda = trieda;
             this.idLetenky = idLetenky;
