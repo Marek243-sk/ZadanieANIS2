@@ -14,6 +14,5 @@ public class ZimnaAtrakcia extends Atrakcia {
     @Override
     public void infoOAtrakciach() {
         System.out.println("Bola pridaná ZIMNÁ atrakcia");
-        //System.out.println("Názov atrakcie: " + this.nazov + ", ročné obdobie: " + this.rocneObdobie + ", od veku: " + this.odVeku + ", aktívny oddych: " + this.aktivnyOddych + ", pasívny oddych: " + this.pasivnyOddych);
     }
 }
