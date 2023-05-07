@@ -34,8 +34,4 @@ public class ZoznamAtrakcii extends Atrakcia {
         }
         zoznam.add(atrakcia);
     }
-
-    public void zobrazAtrakcie() throws AtrakciaException {
-
-    }
 }
