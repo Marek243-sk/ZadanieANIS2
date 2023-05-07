@@ -10,26 +10,32 @@ public class ZoznamAtrakcii extends Atrakcia {
         this.zoznam = new ArrayList<>();
     }
     @Override
-    public void infoOAtrakcii() {
-        System.out.println("Zoznam atrakcií: ");
+    public void infoOAtrakciach() throws AtrakciaException{
+        if (zoznam.isEmpty()) {
+            throw new AtrakciaException("CHYBA! Zoznam atrakcií je prázdny.");
+        }
+        System.out.println("Zoznam atrakcií obsahuje tieto atrakcie:");
+        for (int i = 0; i < zoznam.size(); i++) {
+            System.out.println("Názov atrakcie: " + zoznam.get(i).nazov + ", ročné obdobie: " + zoznam.get(i).rocneObdobie
+                    + ", cena: " + zoznam.get(i).cena);
+        }
     }
 
+    //Pridá atrakciu do zoznamu, ak sú splnené podmienky, ak nie sú, tak sa vyvolá výnimka.
+
     public void pridajAtrakciu(Atrakcia atrakcia) throws AtrakciaException {
-        for (int i = 0; i < zoznam.size(); i++) {
-            if (zoznam.get(i).getNazov().equals(atrakcia.getNazov())) {
-                throw new AtrakciaException("Atrakcia s týmto názvom už existuje.", this);
+        for (Atrakcia existujucaAtrakcia : zoznam) {
+            if (existujucaAtrakcia.getNazov().equals(atrakcia.getNazov()) && existujucaAtrakcia.getRocneObdobie().equals(atrakcia.getRocneObdobie())) {
+                throw new AtrakciaException("CHYBA! Atrakcia už existuje v zozname.", this);
             }
+        }
+        if (atrakcia.getCena() < 10) {
+            throw new AtrakciaException("CHYBA! Cena atrakcie musí byť väčšia ako 10.", this);
         }
         zoznam.add(atrakcia);
     }
 
-
     public void zobrazAtrakcie() throws AtrakciaException {
-        boolean atrakciaExistuje = false;
-        Iterator<Atrakcia> iterator = zoznam.iterator();
-        while (iterator.hasNext()) {
-            Atrakcia a = iterator.next();
-            a.infoOAtrakcii();
-        }
+
     }
 }

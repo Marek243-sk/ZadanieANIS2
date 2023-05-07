@@ -12,8 +12,8 @@ public class LetnaAtrakcia extends Atrakcia {
 
     //Vypíše charakteristiky danej letnej atrakcie
     @Override
-    public void infoOAtrakcii() {
-        System.out.println("Letná atrakcia");
-        System.out.println("Názov atrakcie: " + this.nazov + ", ročné obdobie: " + this.rocneObdobie + ", od veku: " + this.odVeku + ", aktívny oddych: " + this.aktivnyOddych + ", pasívny oddych: " + this.pasivnyOddych);
+    public void infoOAtrakciach() {
+        System.out.println("Bola pridaná LETNÁ atrakcia");
+        //System.out.println("Názov atrakcie: " + this.nazov + ", ročné obdobie: " + this.rocneObdobie + ", od veku: " + this.odVeku + ", aktívny oddych: " + this.aktivnyOddych + ", pasívny oddych: " + this.pasivnyOddych);
     }
 }

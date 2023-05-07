@@ -19,6 +19,9 @@ public abstract class Atrakcia {
     public String getNazov() {
         return this.nazov;
     }
+    public String getRocneObdobie() {
+        return this.rocneObdobie;
+    }
 
-    public abstract void infoOAtrakcii();
+    public abstract void infoOAtrakciach() throws AtrakciaException;
 }

@@ -6,10 +6,21 @@ public class ManazerUbytovania {
 
     public ArrayList<Ubytovanie> pridelenieUbytovania = new ArrayList<Ubytovanie>();
 
-    public void pridelenieUbytovania(String nazovHotela, String adresa, int cisloIzby, String dlzkaPobytu, int pocetLozok, int cenaZaUbytovanie) {
+    //Ak je pole 'prideleneUbytovania' naplnené aspoň jedným "ubytovaním", tak ho prejde, "spýta" sa na dĺžku pobytu, počet lôžok a na cenu za ubytovanie.
+    //Ak hodnoty neprejdú cez kontrolu, vyhodí sa chyba, ak prejdú, "ubytovanie" sa pridá do zoznamu.
+    public void pridelenieUbytovania(String nazovHotela, String adresa, int cisloIzby, String dlzkaPobytu, int pocetLozok, int cenaZaUbytovanie) throws MUException {
+        if (pridelenieUbytovania.size() > 0) {
+            for (int i = 0; i < pridelenieUbytovania.size(); i++) {
+                if (Integer.parseInt(pridelenieUbytovania.get(i).getDlazkaPobytu() ) < 1 || pridelenieUbytovania.get(i).getPocetLozok() < 1 ||
+                        pridelenieUbytovania.get(i).getCenaZaUbytovanie() < 10) {
+                    throw new MUException("CHYBA!. Musí byť splnené: dĺžka pobytu > 1 deň, počet lôžok > 1, cena za ubytovanie > 10€.");
+                }
+            }
+        }
         this.pridelenieUbytovania.add(new Ubytovanie(nazovHotela, adresa, cisloIzby, dlzkaPobytu,  pocetLozok, cenaZaUbytovanie));
     }
 
+    //Overí, či je pole prázdne, ak nie, tak ho prejde a vypíše jednotlivé ubytovania
     public void ukazPonukuUbytovani() throws MUException{
         if (this.pridelenieUbytovania.isEmpty()) {
             throw new MUException("Zoznam ubytovaní je prázdny.");
@@ -22,6 +33,7 @@ public class ManazerUbytovania {
         }
     }
 
+    //Overí, či je pole prázdne, alebo ak je dĺžka pobytu 0 a menej dní
     public void uplatniZlavu() throws MUException {
         if (this.pridelenieUbytovania.isEmpty()) {
             throw new MUException("Zoznam ubytovaní je prázdny.");
